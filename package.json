@@ -2,7 +2,7 @@
 	"name": "@gluecode-it/readable-to-writeables-stream-processor",
 	"version": "1.0.0",
 	"description": "",
-	"main": "babel.config.js",
+	"main": "dist/index.js",
 	"scripts": {
 		"test": "jest --coverage",
 		"posttest": "npm run format",
