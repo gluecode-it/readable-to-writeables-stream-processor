@@ -19,5 +19,5 @@ export abstract class ReadableToWriteablesSteamProcessor {
 					reject(err);
 				});
 		});
-	}
-}
+	} 
+} 
