@@ -1,0 +1,15 @@
+{
+	"plugins": [
+		[
+			"@semantic-release/commit-analyzer",
+			{
+				"preset": "angular",
+				"releaseRules": [{ "scope": "deps", "release": "patch" }],
+				"parserOpts": {
+					"noteKeywords": ["BREAKING CHANGE"]
+				}
+			}
+		],
+		"@semantic-release/release-notes-generator"
+	]
+}
