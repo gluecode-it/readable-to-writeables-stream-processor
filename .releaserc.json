@@ -4,7 +4,7 @@
 			"@semantic-release/commit-analyzer",
 			{
 				"preset": "angular",
-				"releaseRules": [{ "scope": "deps", "release": "patch" }],
+				"releaseRules": [{ "scope": "deps-dev", "release": "patch" }],
 				"parserOpts": {
 					"noteKeywords": ["BREAKING CHANGE"]
 				}
