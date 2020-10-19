@@ -16,10 +16,6 @@ jobs:
           node-version: 12
       - name: npmrc
         run: >-
-          echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PAT }}" >>
-          .npmrc
-      - name: npmrc
-        run: >-
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}" >>
           .npmrc
       - name: Install dependencies
@@ -29,5 +25,4 @@ jobs:
       - name: 'Release with semantic release'
         uses: cycjimmy/semantic-release-action@v2
         env: 
-          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN_NPMJS }}'
