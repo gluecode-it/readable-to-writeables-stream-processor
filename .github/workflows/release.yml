@@ -18,7 +18,11 @@ jobs:
         run: >-
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GH_PAT }}" >>
           .npmrc
-      - name: Install dependencies
+      - name: npmrc
+        run: >-
+          echo "//registry.npmjs.org/:_authToken=${{ NPM_TOKEN_NPMJS }}" >>
+          .npmrc
+          - name: Install dependencies
         run: npm install
       - name: Run Jest
         run: npm test
