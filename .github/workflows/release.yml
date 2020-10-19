@@ -20,7 +20,7 @@ jobs:
           .npmrc
       - name: npmrc
         run: >-
-          echo "//registry.npmjs.org/:_authToken=${{ NPM_TOKEN_NPMJS }}" >>
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}" >>
           .npmrc
           - name: Install dependencies
         run: npm install
@@ -28,6 +28,6 @@ jobs:
         run: npm test
       - name: 'Release with semantic release'
         uses: cycjimmy/semantic-release-action@v2
-        env:
+        env: 
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN_NPMJS }}'
