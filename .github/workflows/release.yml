@@ -15,15 +15,17 @@ jobs:
         with:
           node-version: 12
       - name: npmrc
-        run: >-
-          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}" >>
-          .npmrc
+        env:
+          NPM_CONTENT: |
+            //npm.pkg.github.com/:_authToken=${{ secrets.NPM_TOKEN }}
+            @gluecode-it:registry=https://registry.npmjs.org/
+        run: echo $NPM_CONTENT >> .npmrc
       - name: Install dependencies
         run: npm install
       - name: Run Jest
         run: npm test
       - name: 'Release with semantic release'
         uses: cycjimmy/semantic-release-action@v2
-        env: 
+        env:
           GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
           NPM_TOKEN: '${{ secrets.NPM_TOKEN_NPMJS }}'
