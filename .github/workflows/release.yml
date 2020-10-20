@@ -16,7 +16,7 @@ jobs:
           node-version: 12
       - name: npmrc
         env:
-          NPM_CONTENT: >
+          NPM_CONTENT: |
             //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}
             @gluecode-it:registry=https://registry.npmjs.org/
         run: echo $NPM_CONTENT >> .npmrc
