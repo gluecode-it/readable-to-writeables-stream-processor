@@ -43,5 +43,8 @@
 			"prettier --write",
 			"eslint --fix"
 		]
+	},
+	"publishConfig": {
+		"access": "public"
 	}
 }
