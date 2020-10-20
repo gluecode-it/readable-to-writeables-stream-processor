@@ -14,12 +14,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
-      - name: npmrc
-        env:
-          NPM_CONTENT: |
-            //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}
-            @gluecode-it:registry=https://registry.npmjs.org/
-        run: echo $NPM_CONTENT >> .npmrc
+      # - name: npmrc
+      #   env:
+      #     NPM_CONTENT: |
+      #       //registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN_NPMJS }}
+      #       @gluecode-it:registry=https://registry.npmjs.org/
+      #   run: echo $NPM_CONTENT >> .npmrc
       - name: Install dependencies
         run: npm install
       - name: Run Jest
